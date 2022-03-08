@@ -1,0 +1,366 @@
+<!doctype html><html lang=zh-cn dir=content>
+<head>
+<meta charset=utf-8>
+<meta http-equiv=x-ua-compatible content="IE=edge,chrome=1">
+<meta name=viewport content="width=device-width,initial-scale=1,maximum-scale=1">
+<meta http-equiv=content-security-policy content="upgrade-insecure-requests">
+<title> Hugo博客搭建 - 程文硕的网站 </title>
+<meta name=keywords content="博客,程序员,架构师,思考,读书,笔记,技术,分享,大数据,产品">
+<meta name=author content="Mrch24">
+<meta property="og:title" content="Hugo博客搭建">
+<meta property="og:site_name" content="程文硕的网站">
+<meta property="og:image" content="/img/author.jpg">
+<meta name=title content="Hugo博客搭建 - 程文硕的网站">
+<meta name=description content="Hugo搭建过程">
+<link rel="shortcut icon" href=/img/favicon.ico>
+<link rel=apple-touch-icon href=/img/apple-touch-icon.png>
+<link rel=apple-touch-icon-precomposed href=/img/apple-touch-icon.png>
+<link href=//cdn.bootcdn.net/ajax/libs/font-awesome/4.6.2/css/font-awesome.min.css rel=stylesheet type=text/css>
+<link href=//cdn.bootcdn.net/ajax/libs/imageviewer/0.1.0/viewer.min.css rel=stylesheet>
+<link href=/css/main.css rel=stylesheet type=text/css>
+<link href=/css/syntax.css rel=stylesheet type=text/css>
+</head>
+<body itemscope itemtype=http://schema.org/WebPage lang=zh-hans>
+<div class="container one-collumn sidebar-position-left page-home">
+<div class=headband></div>
+<header id=header class=header itemscope itemtype=http://schema.org/WPHeader>
+<div class=header-inner> <div class=site-brand-container>
+<div class=site-nav-toggle>
+<div class=toggle role=button style=opacity:1;top:0>
+<span class=toggle-line></span>
+<span class=toggle-line></span>
+<span class=toggle-line></span>
+</div>
+</div>
+<div class=site-meta>
+<div class=multi-lang-switch>
+<i class="fa fa-fw fa-language" style=margin-right:5px></i>
+</div>
+<div class=custom-logo-site-title>
+<a href=/ class=brand rel=start>
+<span class=logo-line-before><i></i></span>
+<span class=site-title>程文硕的网站</span>
+<span class=logo-line-after><i></i></span>
+</a>
+</div>
+<p class=site-subtitle>啥也不会 啥也不是</p>
+</div>
+<div class=site-nav-right>
+<div class="toggle popup-trigger" style=opacity:1;top:0>
+<i class="fa fa-search fa-fw fa-lg"></i>
+</div>
+</div>
+</div>
+<nav class=site-nav>
+<ul id=menu class=menu>
+<li class=menu-item>
+<a href=/ rel=section>
+<i class="menu-item-icon fa fa-fw fa-home"></i> <br>首页
+</a>
+</li>
+<li class=menu-item>
+<a href=/post rel=section>
+<i class="menu-item-icon fa fa-fw fa-archive"></i> <br>归档
+</a>
+</li>
+<li class="menu-item menu-item-search">
+<a href=javascript:; class=popup-trigger> <i class="menu-item-icon fa fa-search fa-fw"></i> <br> 搜索</a>
+</li>
+</ul>
+<div class=site-search>
+<div class="popup search-popup local-search-popup">
+<div class="local-search-header clearfix">
+<span class=search-icon><i class="fa fa-search"></i> </span>
+<span class=popup-btn-close><i class="fa fa-times-circle"></i></span>
+<div class=local-search-input-wrapper>
+<input autocomplete=off placeholder=搜索关键字... spellcheck=false type=text id=local-search-input autocapitalize=none autocorrect=off>
+</div>
+</div>
+<div id=local-search-result></div>
+</div>
+</div>
+</nav>
+</div>
+</header>
+<main id=main class=main>
+<div class=main-inner>
+<div class=content-wrap>
+<div id=content class=content>
+<section id=posts class=posts-expand>
+<article class="post post-type-normal" itemscope itemtype=http://schema.org/Article>
+<header class=post-header>
+<h1 class=post-title itemprop="name headline">
+<a class=post-title-link href=http://mrch24.github.io/post/hugoblog/ itemprop=url>
+Hugo博客搭建
+</a>
+</h1>
+<div class=post-meta>
+<span class=post-time>
+<i class="fa fa-calendar-o fa-fw"></i>
+<span class=post-meta-item-text>时间：</span>
+<time itemprop=dateCreated datetime=2016-03-22T13:04:35+08:00 content="2022-02-16">
+2022-02-16
+</time>
+</span>
+<span>
+|
+<i class="fa fa-file-word-o fa-fw"></i>
+<span class=post-meta-item-text>字数：</span>
+<span class=leancloud-world-count>2317 字</span>
+</span>
+<span>
+|
+<i class="fa fa-eye fa-fw"></i>
+<span class=post-meta-item-text>阅读：</span>
+<span class=leancloud-view-count>5分钟</span>
+</span>
+<span id=/post/hugoblog/ class=leancloud_visitors data-flag-title=Hugo博客搭建>
+|
+<i class="fa fa-binoculars fa-fw"></i>
+<span class=post-meta-item-text>阅读次数：</span>
+<span class=leancloud-visitors-count></span>
+</span>
+</div>
+</header>
+<div class=post-body itemprop=articleBody>
+<p>前面已经很快速的实现了WordPress博客框架的搭建，搭建过程非常简单，甚至没有手动进行过配置，并没有深刻体会到网站开发的过程。</p>
+<p>基于热爱挑战热爱学习、无穷无尽折腾的原则，也想换一个WordPress里没有的主题<code>nexT</code>，我决定选择<code>hugo</code>来再一次搭建我的博客。</p>
+<p>本文将从以下几个方面讲解hugo网站搭建过程：</p>
+<ul>
+<li>Hugo简介及预备工作</li>
+<li>主题安装并本地测试</li>
+<li>修改配置及内容</li>
+</ul>
+<hr>
+<h2 id=hugo简介及预备工作>Hugo简介及预备工作</h2>
+<p>据了解，目前流行的个人博客框架有很多，各有其特点，比如<code>Hexo</code>、<code>Hugo</code>、<code>WordPress</code>等等，WordPress在前面我们已经了解过，而Hexo与Hugo是较为相似的两个框架，在经过对比之后，发现Hugo的本地环境配置较为简单快速，所以我选择了Hugo作为本网站的框架。</p>
+<ul>
+<li>安装<code>hugo</code>：</li>
+</ul>
+<blockquote>
+<p>Hugo，一种用 Go 语言编写的静态网站生成器。简单、易用、高效、易扩展、快速部署。
+它号称是世界上最快的框架。官网为： <a href=https://gohugo.io>https://gohugo.io</a>。
+在中文官网中我们可以方便地查阅帮助文档 ，即：<a href=https://www.gohugo.org>https://www.gohugo.org</a></p>
+</blockquote>
+<p>我的操作系统是Windows，所以安装时前往<a href=https://github.com/gohugoio/hugo/releases> https://github.com/gohugoio/hugo/releases</a> 页面，下载 hugo_X.XX_Windows-64bit.zip，解压即可得到对应的Hugo二进制文件Hugo.exe</p>
+<ul>
+<li>安装<code>Git</code>：</li>
+</ul>
+<blockquote>
+<p>Git 是一个开源的分布式版本控制系统，用于敏捷高效地处理任何或小或大的项目。Git 不仅仅是个版本控制系统，它也是个内容管理系统(CMS)，工作管理系统等。</p>
+</blockquote>
+<p>Windows安装：进入网站<a href=https://git-scm.com/>https://git-scm.com/</a>下载安装</p>
+<ul>
+<li>安装<code>Go1.4+</code>：</li>
+</ul>
+<p>即Go语言的安装，安装地址：<a href=https://go.dev/>The Go Programming Language</a>，并设置好<code>GOPATH</code>环境变量</p>
+<hr>
+<h2 id=主题安装并本地测试>主题安装并本地测试</h2>
+<h4 id=用hugo创建第一个新网站>用Hugo创建第一个新网站</h4>
+<p>首先准备新建一个文件夹用于存放网站文件，例如：<code>E:\Myblog\test</code></p>
+<p>在<code>cmd</code>中切换至本路径，然后执行下方代码</p>
+<div class=highlight><pre tabindex=0 style=background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-fallback data-lang=fallback>hugo new site quickstart
+</code></pre></div><p>上述操作会在<code>E:\Myblog\test</code>文件夹中创建一个名为<code>quickstart</code>的文件夹，整个网站的文件都在这个文件夹中，如<code>theme</code>里面存主题文件，<code>content</code>里面存markdown文件</p>
+<p>接下来在cmd中进入该路径：<code>E:\Myblog\test\quickstart</code> 并输入：</p>
+<div class=highlight><pre tabindex=0 style=background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-fallback data-lang=fallback>git init
+git clone --recurse-submodules https://github.com/elkan1788/hugo-theme-next.git
+
+</code></pre></div><p>第一行命令是初始化站点的所有文件</p>
+<p>第二行命令是克隆了GitHub上的<code>nexT</code>主题</p>
+<p>下载好之后将<code>hugo-theme-next</code>目录下的<code>config</code>和<code>content</code>拷贝到站点根目录<code>quickstart</code>下</p>
+<p>此时该站点已经配置完成，接下来在cmd中执行下方代码生成站点服务：</p>
+<div class=highlight><pre tabindex=0 style=background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-fallback data-lang=fallback>hugo server
+</code></pre></div><p>该命令就是启动了本地服务器，使用浏览器打开网址<code>http://localhost:1313/</code>或<code>127.0.0.1</code>就可以预览，如下图所示：</p>
+<p><img src=/image/HugoBlog/image.png alt title></p>
+<p>至此就已经完成了<code>nexT</code>主题的安装，并在本地成功打开了正常的网页，接下来我们要根据自己的需求将网页修改为自己的个人博客。</p>
+<hr>
+<h2 id=修改配置和内容>修改配置和内容</h2>
+<p>毫无疑问，这一部分是最<strong>耗费时间</strong>的一部分，前面的安装和测试按照教程步骤来，就算遇到小问题也可以及时解决。</p>
+<p>但是想要修改配置信息，需要穿梭于每个文件夹里的每个配置文件，搞清楚每一个配置文件有什么作用，对应的是哪一块的内容，举个例子：在<code>config</code>文件夹中的<code>config.toml</code>负责一些基本配置，比如主题的选择、语言的选择、timeout的设定，emoji或math是否启用等等；<code>menu.toml</code>负责菜单栏的设定，可以按个人意愿增删改，并修改样式；<code>params.toml</code>负责界面中的很多元素设定，比如社交网站（如Github）入口，页脚Footer的设定，博客作者的头像昵称和介绍的修改等等。在<code>hugo-theme-next</code>文件夹中的配置文件更多且更为复杂，此处暂不做解释。</p>
+<p>所以在修改配置方面所需工作量较大，也难以解释，在此处就不再赘述，以下主要讲解新建一篇文章的注意事项：</p>
+<h4 id=新建markdown文章>新建markdown文章</h4>
+<p>新建文章均在<code>content</code>文件夹下的<code>post</code>文件夹里，可以直接把markdown文件拷贝过去，也可以用命令行新建一个文件：</p>
+<div class=highlight><pre tabindex=0 style=background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-fallback data-lang=fallback>hugo new post/test.md
+</code></pre></div><p>自动生成的md文件中包含最基本的配置内容，如下所示：</p>
+<div class=highlight><pre tabindex=0 style=background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-fallback data-lang=fallback>+++
+date = &#34;2015-10-25T08:36:54-07:00&#34;
+draft = true
+title = &#34;test&#34;
+
++++
+
+正文内容
+</code></pre></div><p>其中两个<code>+++</code>之间是文章的发布时间、标题、是否为草稿等设定，这些内容是<code>toml</code>格式的，也可以换成<code>YAML</code>格式（用两个<code>---</code>来标记），还有更多的设定如下所示：</p>
+<div class=highlight><pre tabindex=0 style=background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-fallback data-lang=fallback>+++
+author:&#34;作者昵称&#34;
+title: &#34;文章标题&#34;
+description: &#34;文章的描述信息&#34;
+tags: [ &#34;标签1&#34;, &#34;标签2&#34;, &#34;标签3&#34; ]
+categories: [ &#34;分类1&#34;, &#34;分类2&#34; ]
+keywords: [ &#34;Hugo&#34;, &#34;keyword&#34; ]
+date: 2012-04-06
+
+# 排序你的文章
+weight: 40
+
+#打开数学公式渲染
+math = true
++++
+
+这句话将展示在主页上
+
+&lt;!--more--&gt;
+
+正文内容
+</code></pre></div><p>正文内容可用其他软件撰写，如<code>Wolai</code>、<code>语雀</code>等等笔记软件，导出为<code>markdown</code>文件后，设定好配置配置内容，拷贝到<code>post</code>文件夹中，就可以发布在网页。</p>
+<h4 id=文章图片显示>文章图片显示</h4>
+<p><code>markdown</code>自身不能携带图片文件，只能从本地加载，所以我们要新建一个专门存图片的文件夹，然后在<code>markdown</code>文件中设定对应的打开路径，就可以将照片附在文章中。如：</p>
+<p>在根目录下的<code>static</code>文件夹中新建一个<code>image</code>文件夹，专门存放图片，为了方便管理，每篇文章可以再自创一个文件夹专门存放自己的图片文件，然后在<code>markdown</code>的对应位置输入以下代码：</p>
+<div class=highlight><pre tabindex=0 style=background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-fallback data-lang=fallback>![](/image/wordpress/wp1.png &#34;&#34;)
+</code></pre></div><p>把对应路径设置正确即可实现图片的正常展示。</p>
+<p>至此已经完成了<code>Hugo</code>网页的搭建，接下来的大部分工作都是写文章然后拷贝到<code>post</code>文件夹中</p>
+</div>
+<footer class=post-footer>
+<div class=post-nav>
+<div class=article-copyright>
+<div class=article-copyright-info>
+<p>
+<span>版权声明：</span>Hugo博客搭建
+</p>
+<p>
+<span>本文链接：</span>http://mrch24.github.io/post/hugoblog/
+</p>
+<p>
+<span>本文作者：</span>Mrch24
+</p>
+<p>
+<span>版权声明： </span>本博客文章除特别声明外，均采用 <a href=https://creativecommons.org/licenses/by-nc-sa/3.0/ target=_blank style=text-decoration:underline>CC BY-NC-SA 3.0</a>许可协议，转载请注明出处！
+</p>
+</div>
+</div>
+<div class=clear></div>
+</div>
+<div class=post-nav>
+<div class="post-nav-next post-nav-item">
+</div>
+<div class="post-nav-prev post-nav-item">
+<a href=http://mrch24.github.io/post/wordpress/ rel=prev title=WordPress快速搭建>
+WordPress快速搭建
+<i class="fa fa-chevron-right"></i>
+</a>
+</div>
+</div>
+</footer>
+</article>
+</section>
+</div>
+</div>
+<div class=sidebar-toggle>
+<div class=sidebar-toggle-line-wrap>
+<span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+<span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+<span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+</div>
+</div>
+<aside id=sidebar class=sidebar>
+<div class=sidebar-inner>
+<section class="site-overview sidebar-panel sidebar-panel-active">
+<div class="site-author motion-element" itemprop=author itemscope itemtype=http://schema.org/Person>
+<img class=site-author-image itemprop=image src=/img/mrch24.png alt=Mrch24>
+<p class=site-author-name itemprop=name>Mrch24</p>
+<p class="site-description motion-element" itemprop=description>
+记录学习，记录成长
+</p>
+</div>
+<nav class="site-state motion-element">
+<div class="site-state-item site-state-posts">
+<a href=/post/>
+<span class=site-state-item-count>7</span>
+<span class=site-state-item-name>日志</span>
+</a>
+</div>
+<div class="site-state-item site-state-categories">
+<a href=/categories/>
+<span class=site-state-item-count>2</span>
+<span class=site-state-item-name>分类</span>
+</a>
+</div>
+<div class="site-state-item site-state-tags">
+<a href=/tags/>
+<span class=site-state-item-count>4</span>
+<span class=site-state-item-name>标签</span>
+</a>
+</div>
+</nav>
+<div class="links-of-author motion-element">
+<span class=links-of-author-item>
+<a href=https://github.com/mrch24/ target=_blank title=GitHub>
+<i class="fa fa-fw fa-github"></i>
+GitHub
+</a>
+</span>
+</div>
+</section>
+</div>
+</aside>
+</div>
+</main>
+<footer id=footer class=footer>
+<div class=footer-inner>
+<div class=copyright>
+<span class=copyright-year>
+&copy; 2010 - 2022
+</span>
+<span class=with-love><i class="fa fa-heart"></i></span>
+<span class=copyright-author>程文硕的网站</span>
+</div>
+<div class=powered-info>
+<span class=powered-by>
+Powered by - <a class=powered-link href=//gohugo.io target=_blank title=hugo>Hugo v0.92.0</a>
+</span>
+<span class=separator-line>/</span>
+<span class=theme-info>
+Theme by - <a class=powered-link href=//github.com/elkan1788/hugo-theme-next target=_blank> NexT
+</a>
+</span>
+</div>
+<div class=vistor-info>
+<script async src=//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js></script>
+<span class=site-uv>
+<i class="fa fa-user"></i>
+<span class=busuanzi-value id=busuanzi_value_site_uv></span>
+</span>
+<span class=separator-line>/</span>
+<span class=site-pv>
+<i class="fa fa-eye"></i>
+<span class=busuanzi-value id=busuanzi_value_site_pv></span>
+</span>
+</div>
+<div class=license-info>
+<span class=storage-info>
+Storage by
+<a href=https://www.ucloud.cn/ style=font-weight:700 target=_blank>UCloud云存储</a>
+</span>
+<span class=separator-line>/</span>
+<span class=license-num>
+<a href=http://beian.miit.gov.cn target=_blank>粤ICP备18047355号</a>
+</span>
+</div>
+</div>
+</footer>
+<div class=back-to-top>
+<i class="fa fa-arrow-up"></i>
+<span id=scrollpercent><span>0</span>%</span>
+</div>
+</div>
+<script type=text/javascript src=//cdn.bootcdn.net/ajax/libs/jquery/2.1.4/jquery.min.js></script>
+<script type=text/javascript src=/js/search.js></script>
+<script type=text/javascript src=/js/affix.js></script>
+<script type=text/javascript src=/js/scrollspy.js></script>
+<script type=text/javascript>function detectIE(){var a=window.navigator.userAgent,b=a.indexOf('MSIE '),c=a.indexOf('Trident/'),d=a.indexOf('Edge/');return b>0||c>0||d>0?-1:1}function getCntViewHeight(){var b=$('#content').height(),a=$(window).height(),c=b>a?b-a:$(document).height()-a;return c}function getScrollbarWidth(){var a=$('<div />').addClass('scrollbar-measure').prependTo('body'),b=a[0],c=b.offsetWidth-b.clientWidth;return a.remove(),c}function registerBackTop(){var b=50,a=$('.back-to-top');$(window).on('scroll',function(){var d,e,f,c,g;a.toggleClass('back-to-top-on',window.pageYOffset>b),d=$(window).scrollTop(),e=getCntViewHeight(),f=d/e,c=Math.round(f*100),g=c>100?100:c,$('#scrollpercent>span').html(g)}),a.on('click',function(){$("html,body").animate({scrollTop:0,screenLeft:0},800)})}function initScrollSpy(){var a='.post-toc',d=$(a),b='.active-current';d.on('activate.bs.scrollspy',function(){var b=$(a+' .active').last();c(),b.addClass('active-current')}).on('clear.bs.scrollspy',c),$('body').scrollspy({target:a});function c(){$(a+' '+b).removeClass(b.substring(1))}}function initAffix(){var a=$('.header-inner').height(),b=parseInt($('.main').css('padding-bottom'),10),c=a+10;$('.sidebar-inner').affix({offset:{top:c,bottom:b}}),$(document).on('affixed.bs.affix',function(){updateTOCHeight(document.body.clientHeight-100)})}function initTOCDimension(){var a,b;$(window).on('resize',function(){a&&clearTimeout(a),a=setTimeout(function(){var a=document.body.clientHeight-100;updateTOCHeight(a)},0)}),updateTOCHeight(document.body.clientHeight-100),b=getScrollbarWidth(),$('.post-toc').css('width','calc(100% + '+b+'px)')}function updateTOCHeight(a){a=a||'auto',$('.post-toc').css('max-height',a)}$(function(){var b=$('.header-inner').height()+10,c,d,a,e;$('#sidebar').css({'margin-top':b}).show(),c=parseInt($('#sidebar').css('margin-top')),d=parseInt($('.sidebar-inner').css('height')),a=c+d,e=$('.content-wrap').height(),e<a&&$('.content-wrap').css('min-height',a),$('.site-nav-toggle').on('click',function(){var a=$('.site-nav'),e=$('.toggle'),b='site-nav-on',f='toggle-close',c=a.hasClass(b),g=c?'slideUp':'slideDown',d=c?'removeClass':'addClass';a.stop()[g]('normal',function(){a[d](b),e[d](f)})}),registerBackTop(),initScrollSpy(),initAffix(),initTOCDimension(),$('.sidebar-nav-toc').click(function(){$(this).addClass('sidebar-nav-active'),$(this).next().removeClass('sidebar-nav-active'),$('.'+$(this).next().attr('data-target')).toggle(500),$('.'+$(this).attr('data-target')).toggle(500)}),$('.sidebar-nav-overview').click(function(){$(this).addClass('sidebar-nav-active'),$(this).prev().removeClass('sidebar-nav-active'),$('.'+$(this).prev().attr('data-target')).toggle(500),$('.'+$(this).attr('data-target')).toggle(500)})})</script>
+<script src=//cdn.bootcdn.net/ajax/libs/imageviewer/0.1.0/viewer.min.js></script>
+<script type=text/javascript>$(function(){$('.post-body').viewer()})</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_SVG"></script>
+<script>(function(){var a=document.createElement('script'),c=window.location.protocol.split(':')[0],b;c==='https'?a.src='https://zz.bdstatic.com/linksubmit/push.js':a.src='http://push.zhanzhang.baidu.com/push.js',b=document.getElementsByTagName("script")[0],b.parentNode.insertBefore(a,b)})()</script>
+</body>
+</html>
